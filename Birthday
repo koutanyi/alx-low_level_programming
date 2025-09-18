@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, GumGum!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fce7f3; /* Light Pink Background */
+            color: #4a044e; /* Dark Purple Text */
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .glowing-text {
+            font-family: 'Pacifico', cursive;
+            text-shadow: 0 0 10px #f0abfc, 0 0 20px #f0abfc, 0 0 30px #f0abfc, 0 0 40px #f0abfc;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .photo-card {
+            background-color: #fdf2f8;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transform: scale(1);
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Confetti Animation */
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFC0CB;
+            opacity: 0;
+            animation: confetti-fall linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translate(var(--x), -10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translate(var(--x), 100vh) rotate(720deg); opacity: 0.5; }
+        }
+
+        /* Balloon Animation */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 80px;
+            height: 100px;
+            background-color: #F87171;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            transform: translateY(0) rotate(var(--rotate-deg));
+            animation: balloon-ascend 20s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 4;
+        }
+
+        @keyframes balloon-ascend {
+            0% { transform: translateY(0) rotate(var(--rotate-deg)); }
+            100% { transform: translateY(-100vh) rotate(var(--rotate-deg)); }
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="p-8 md:p-12">
+
+    <!-- Cat Stickers -->
+    <div class="absolute top-10 left-5 transform rotate-[-20deg] w-24 h-24 z-20">
+        <img src="https://em-content.zobj.net/source/microsoft/316/grinning-cat-with-smiling-eyes_1f638.png" alt="Happy Cat Sticker">
+    </div>
+    <div class="absolute top-24 right-5 transform rotate-[15deg] w-24 h-24 z-20">
+        <img src="https://em-content.zobj.net/source/microsoft/316/smiling-cat-with-heart-eyes_1f63b.png" alt="Smiling Cat Sticker">
+    </div>
+    <div class="absolute bottom-20 left-10 transform rotate-[10deg] w-24 h-24 z-20">
+        <img src="https://em-content.zobj.net/source/microsoft/316/cat-face_1f431.png" alt="Cat Face Sticker">
+    </div>
+    <div class="absolute bottom-5 right-20 transform rotate-[-10deg] w-24 h-24 z-20">
+        <img src="https://em-content.zobj.net/source/microsoft/316/weary-cat_1f640.png" alt="Tired Cat Sticker">
+    </div>
+
+    <main class="max-w-4xl mx-auto text-center relative z-20">
+        <h1 class="text-6xl md:text-8xl font-bold glowing-text mb-6">
+            HAPPY BIRTHDAY GUMGUM !!!
+        </h1>
+
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12 text-pink-900">
+            Happy birthday to my beautiful girl, I love you so so much and you mean the world. You deserve everything good and you'll receive it. Have the best year yet and may your GumGum persona be radiant as ever. Happy birthday and i LOVE you.
+        </p>
+
+        <div class="image-container">
+            <div class="photo-card p-4 md:p-6 shadow-xl">
+                <img src="uploaded:Screenshot_20250917-233234_Video Player.jpg-1c4dd1d3-f016-4ba2-91a2-43d4ac4f3876" alt="Birthday girl 1" class="rounded-2xl w-full h-auto object-cover border-4 border-pink-400">
+            </div>
+            <div class="photo-card p-4 md:p-6 shadow-xl">
+                <img src="uploaded:Snapchat-1089711759.jpg-bfa5b527-8116-4621-bad7-9cf9a9a44784" alt="Birthday girl 2" class="rounded-2xl w-full h-auto object-cover border-4 border-pink-400">
+            </div>
+            <div class="photo-card p-4 md:p-6 shadow-xl">
+                <img src="uploaded:Screenshot_20250917-233134_Telegram.jpg-2acdf134-62ad-4315-9063-8a5e9949833e" alt="Birthday girl 3" class="rounded-2xl w-full h-auto object-cover border-4 border-pink-400">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Confetti Animation
+        function createConfetti() {
+            const confettiCount = 50;
+            const colors = ['#FFC0CB', '#FF69B4', '#F08080', '#FFD700', '#ADD8E6'];
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti-piece');
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confetti.style.animationDelay = `${Math.random() * 5}s`;
+                confetti.style.setProperty('--x', `${(Math.random() - 0.5) * 20}vw`);
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 7000);
+            }
+        }
+
+        // Balloon Animation
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            const colors = ['#F87171', '#FDA4AF', '#FCD34D', '#A78BFA'];
+            balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.left = `${Math.random() * 90 + 5}vw`;
+            balloon.style.animationDuration = `${Math.random() * 10 + 15}s`;
+            balloon.style.animationDelay = `${Math.random() * 5}s`;
+            balloon.style.setProperty('--rotate-deg', `${(Math.random() - 0.5) * 30}deg`);
+            document.body.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 25000);
+        }
+
+        // Initial creation
+        createConfetti();
+        createBalloon();
+
+        // Repeat creation at intervals
+        setInterval(createConfetti, 3000);
+        setInterval(createBalloon, 8000);
+    </script>
+</body>
+</html>
